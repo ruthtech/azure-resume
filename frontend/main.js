@@ -2,11 +2,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     getVisitCount();
 })
 
-const functionApi = ' http://localhost:7071/api/GetResumeCounter';
+const functionApiUrl = 'https://getresumecounter-rsl.azurewebsites.net/api/GetResumeCounter?code=_bnMDzPA2K_JUKxk3iUiSu-DJNCN_Qngkw4DbRWOy5y5AzFuKq-0FQ==';
+const localFunctionApi = 'http://localhost:7071/api/GetResumeCounter';
 
 const getVisitCount = () => {
     let count = 30; // some random number to get started
-    fetch(functionApi).then(response => {
+    fetch(functionApiUrl).then(response => {
         return response.json();
     }).then(response => {
         console.log("Website called function API.");
